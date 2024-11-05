@@ -1,5 +1,10 @@
 package com.a3project.filmcatalog.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_movie")
 public class Movie extends Media {
 
 	private Integer duration;
