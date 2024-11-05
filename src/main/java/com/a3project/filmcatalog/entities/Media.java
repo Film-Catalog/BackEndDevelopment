@@ -11,7 +11,7 @@ public abstract class Media {
 	public Media() {
 	}
 
-	public Media(long id, String title, Double score, Integer count, String image) {
+	public Media(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
 		this.title = title;
 		this.score = score;
@@ -23,7 +23,7 @@ public abstract class Media {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
