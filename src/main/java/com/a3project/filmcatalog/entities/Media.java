@@ -2,7 +2,7 @@ package com.a3project.filmcatalog.entities;
 
 public abstract class Media {
 
-	protected long id;
+	protected Long id;
 	protected String title;
 	protected Double score;
 	protected Integer count;
