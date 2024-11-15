@@ -1,5 +1,8 @@
 package com.a3project.filmcatalog.entities;
 
+import java.util.Objects;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,6 +14,7 @@ public class Score {
 	@EmbeddedId
 	private ScorePK id = new ScorePK();
 
+	@Column(name = "score_value")
 	private Double value;
 
 	public Score() {
@@ -19,7 +23,7 @@ public class Score {
 	public void setMovie(Movie movie) {
 		id.setMovie(movie);
 	}
-	
+
 	public void setUser(User user) {
 		id.setUser(user);
 	}
@@ -40,4 +44,20 @@ public class Score {
 		this.value = value;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Score other = (Score) obj;
+		return Objects.equals(id, other.id);
+	}
 }
