@@ -15,7 +15,7 @@ public class Score {
 	private ScorePK id = new ScorePK();
 
 	@Column(name = "score_value")
-	private Double value_score;
+	private Double value;
 
 	public Score() {
 	}
