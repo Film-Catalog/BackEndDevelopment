@@ -9,29 +9,26 @@ public class MovieDTO {
 	protected Double score;
 	protected Integer count;
 	protected String image;
-	private Integer duration;
 
 	public MovieDTO() {
 		super();
 	}
 
-	public MovieDTO(Long id, String title, Double score, Integer count, String image, Integer duration) {
+	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.score = score;
 		this.count = count;
 		this.image = image;
-		this.duration = duration;
 	}
 
-	public MovieDTO(Movie x) {
-		id = x.getId();
-		title = x.getTitle();
-		score = x.getScore();
-		count = x.getCount();
-		image = x.getImage();
-		//duration = x.getDuration();
+	public MovieDTO(Movie movie) {
+		id = movie.getId();
+		title = movie.getTitle();
+		score = movie.getScore();
+		count = movie.getCount();
+		image = movie.getImage();
 	}
 
 	public Long getId() {
@@ -72,14 +69,6 @@ public class MovieDTO {
 
 	public void setImage(String image) {
 		this.image = image;
-	}
-
-	public Integer getDuration() {
-		return duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
 	}
 
 }
