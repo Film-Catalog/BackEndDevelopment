@@ -1,27 +1,100 @@
 package com.a3project.filmcatalog.entities;
 
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_movie")
-public class Movie extends Media {
+public class Movie {
 
-	private Integer duration;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String title;
+	private Double score;
+	private Integer count;
+	private String image;
+
+	@OneToMany(mappedBy = "id.movie")
+	private Set<Score> scores = new HashSet<>();
 
 	public Movie() {
 	}
 
-	public Movie(Long id, String title, Double score, Integer count, String image, Integer duration) {
-		super(id, title, score, count, image);
-		this.duration = duration;
+	public Movie(Long id, String title, Double score, Integer count, String image) {
+		this.id = id;
+		this.title = title;
+		this.score = score;
+		this.count = count;
+		this.image = image;
 	}
 
-	public int getDuration() {
-		return duration;
+	public Long getId() {
+		return id;
 	}
 
-	public void setDuration(int duration) {
-		this.duration = duration;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Set<Score> getScores() {
+		return scores;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Movie other = (Movie) obj;
+		return Objects.equals(id, other.id);
 	}
 }

@@ -25,13 +25,13 @@ public class MovieDTO {
 		this.duration = duration;
 	}
 
-	public MovieDTO(Movie movie) {
-		id = movie.getId();
-		title = movie.getTitle();
-		score = movie.getScore();
-		count = movie.getCount();
-		image = movie.getImage();
-		duration = movie.getDuration();
+	public MovieDTO(Movie x) {
+		id = x.getId();
+		title = x.getTitle();
+		score = x.getScore();
+		count = x.getCount();
+		image = x.getImage();
+		//duration = x.getDuration();
 	}
 
 	public Long getId() {

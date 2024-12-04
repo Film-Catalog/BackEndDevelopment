@@ -1,4 +1,4 @@
-package com.a3project.filmcatalog.entities;
+/*package com.a3project.filmcatalog.entities;
 
 public class Series extends Media {
 
@@ -31,3 +31,4 @@ public class Series extends Media {
 	}
 
 }
+*/

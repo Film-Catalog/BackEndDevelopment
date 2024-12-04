@@ -1,4 +1,4 @@
-package com.a3project.filmcatalog.entities;
+/*package com.a3project.filmcatalog.entities;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -69,3 +69,4 @@ public abstract class Media {
 	}
 
 }
+*/
