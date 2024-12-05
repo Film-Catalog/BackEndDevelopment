@@ -4,30 +4,42 @@ import com.a3project.filmcatalog.entities.Movie;
 
 public class MovieDTO {
 
-	protected Long id;
-	protected String title;
-	protected Double score;
-	protected Integer count;
-	protected String image;
+	private Long id;
+	private String title;
+	private String synopsis;
+	private String film_genre;
+	private Double score;
+	private Integer reviews;
+	private Integer releasing_year;
+	private Integer duration;
+	private String image;
 
 	public MovieDTO() {
 		super();
 	}
 
-	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
-		super();
+	public MovieDTO(Long id, String title, String synopsis, String film_genre, Double score, Integer reviews,
+			Integer releasing_year, Integer duration, String image) {
 		this.id = id;
 		this.title = title;
+		this.synopsis = synopsis;
+		this.film_genre = film_genre;
 		this.score = score;
-		this.count = count;
+		this.reviews = reviews;
+		this.releasing_year = releasing_year;
+		this.duration = duration;
 		this.image = image;
 	}
 
 	public MovieDTO(Movie movie) {
 		id = movie.getId();
 		title = movie.getTitle();
+		synopsis = movie.getSynopsis();
+		film_genre = movie.getFilm_genre();
 		score = movie.getScore();
-		count = movie.getCount();
+		reviews = movie.getReviews();
+		releasing_year = movie.getReleasing_year();
+		duration = movie.getDuration();
 		image = movie.getImage();
 	}
 
@@ -47,6 +59,22 @@ public class MovieDTO {
 		this.title = title;
 	}
 
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public String getFilm_genre() {
+		return film_genre;
+	}
+
+	public void setFilm_genre(String film_genre) {
+		this.film_genre = film_genre;
+	}
+
 	public Double getScore() {
 		return score;
 	}
@@ -55,12 +83,28 @@ public class MovieDTO {
 		this.score = score;
 	}
 
-	public Integer getCount() {
-		return count;
+	public Integer getReviews() {
+		return reviews;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setReviews(Integer reviews) {
+		this.reviews = reviews;
+	}
+
+	public Integer getReleasing_year() {
+		return releasing_year;
+	}
+
+	public void setReleasing_year(Integer releasing_year) {
+		this.releasing_year = releasing_year;
+	}
+
+	public Integer getDuration() {
+		return duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
 	}
 
 	public String getImage() {
