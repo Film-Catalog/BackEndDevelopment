@@ -3,6 +3,7 @@
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -11,20 +12,25 @@ public abstract class Media {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
-	
 	protected String title;
+	@Lob
+	protected String synopsis;
 	protected Double score;
-	protected Integer count;
+	protected Integer reviews;
+	protected Integer releasing_year;
 	protected String image;
 
 	public Media() {
 	}
 
-	public Media(Long id, String title, Double score, Integer count, String image) {
+	public Media(Long id, String title, String synopsis, Double score, Integer reviews, Integer releasing_year,
+			String image) {
 		this.id = id;
 		this.title = title;
+		this.synopsis = synopsis;
 		this.score = score;
-		this.count = count;
+		this.reviews = reviews;
+		this.releasing_year = releasing_year;
 		this.image = image;
 	}
 
@@ -44,6 +50,14 @@ public abstract class Media {
 		this.title = title;
 	}
 
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
 	public Double getScore() {
 		return score;
 	}
@@ -52,12 +66,20 @@ public abstract class Media {
 		this.score = score;
 	}
 
-	public Integer getCount() {
-		return count;
+	public Integer getReviews() {
+		return reviews;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setReviews(Integer reviews) {
+		this.reviews = reviews;
+	}
+
+	public Integer getReleasing_year() {
+		return releasing_year;
+	}
+
+	public void setReleasing_year(Integer releasing_year) {
+		this.releasing_year = releasing_year;
 	}
 
 	public String getImage() {
@@ -68,5 +90,4 @@ public abstract class Media {
 		this.image = image;
 	}
 
-}
-*/
+}*/
