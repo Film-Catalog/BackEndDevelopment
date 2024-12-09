@@ -13,7 +13,6 @@ public abstract class Media {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
 	protected String title;
-	@Lob
 	protected String synopsis;
 	protected Double score;
 	protected Integer reviews;
